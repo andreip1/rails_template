@@ -1,72 +1,54 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-ruby "3.1.2"
+source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.1"
+ruby '3.1.2'
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# Core Rails and DB
+gem 'bootsnap', require: false
+gem 'pg', '~> 1.1'
+gem 'rails', '~> 7.1.1'
+gem 'sprockets-rails'
 
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+# Web server
+gem 'puma', '>= 5.0'
 
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+# Frontend related
+gem 'importmap-rails'
+gem 'jbuilder'
+gem 'stimulus-rails'
+gem 'tailwindcss-rails'
+gem 'turbo-rails'
 
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+# Authentication and Authorization
+gem 'devise'
+gem 'pundit'
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+# Background Jobs and Redis
+gem 'redis', '>= 4.0.1'
+gem 'redis-rails'
+gem 'sidekiq'
 
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+# Development and Debugging
+gem 'brakeman', require: false, group: :development
+gem 'bullet', group: :development
+gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw], group: %i[development test]
+gem 'dotenv-rails', group: %i[development test]
+gem 'error_highlight', '>= 0.4.0', platforms: [:ruby], group: :development
+gem 'letter_opener', group: :development
+gem 'listen', group: :development
+gem 'pry-rails', group: %i[development test]
+gem 'rubocop-rails', require: false, group: :development
+gem 'tzinfo-data', platforms: %i[mswin mswin64 mingw x64_mingw jruby]
+gem 'web-console', group: :development
 
-# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails"
+# Testing
+gem 'capybara', group: :test
+gem 'factory_bot_rails', group: %i[development test]
+gem 'rspec-rails', group: %i[development test]
+gem 'selenium-webdriver', group: :test
+gem 'shoulda-matchers', group: :test
 
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
-
-# Use Redis adapter to run Action Cable in production
-gem "redis", ">= 4.0.1"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
-
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
-end
-
-group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
-end
-
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-end
+# Others
+gem 'annotate'
+gem 'simple_form'
