@@ -26,7 +26,6 @@ gem 'pundit'
 
 # Background Jobs and Redis
 gem 'redis', '>= 4.0.1'
-gem 'redis-rails'
 gem 'sidekiq'
 
 # Development and Debugging
